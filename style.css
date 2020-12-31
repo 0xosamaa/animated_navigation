@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-image: linear-gradient(
+    to bottom,
+    #eafbff 0%,
+    #eafbff 50%,
+    #5290f9 50%,
+    #5290f9 100%
+  );
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.6s linear;
+}
+
+nav.active {
+  width: 350px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50px);
+  transition: all 0.6s linear;
+}
+
+nav ul li{
+  transform: rotateY(0deg);
+  transition: all 0.6s linear;
+}
+
+nav.active ul li{
+  transform: rotateY(360deg);
+}
+
+nav.active ul{
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-20px);
+}
+
+nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  margin: 0 10px;
+}
+
+button {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  outline: none;
+  padding: 10px;
+  transition: 0.6s linear;
+}
+
+nav.active button {
+  transform: translateX(140px);
+}
+
+button .line {
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  transition: 0.6s linear;
+  background-color: #5290f9;
+}
+
+nav button .line {
+top: 65%;
+}
+
+nav button .line2 {
+top: 35%;
+}
+
+nav.active button .line {
+  top: auto;
+  transform: rotate(765deg);
+}
+
+nav.active button .line2 {
+  top: auto;
+  transform: rotate(-765deg);
+}
